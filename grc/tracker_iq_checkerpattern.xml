@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<block>
+  <name>iq_checkerpattern</name>
+  <key>tracker_iq_checkerpattern</key>
+  <category>tracker</category>
+  <import>import tracker</import>
+  <make>tracker.iq_checkerpattern($sample_rate, $frequency, $amplitude)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Sample Rate</name>
+    <key>sample_rate</key>
+    <value>10.0</value>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Frequency</name>
+    <key>frequency</key>
+    <value>10.0</value>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Amplitude</name>
+    <key>amplitude</key>
+    <value>10.0</value>
+    <type>float</type>
+  </param>
+
+
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>
